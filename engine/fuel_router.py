@@ -210,7 +210,9 @@ def plan_fuel_trip(
                         "brand": s["brand"] or "Public Retailer",
                         "nearest_node_id": nid,
                         "dist_along_route_km": dist_along_route,
-                        "snap_dist_m": float(s["snap_dist_m"] or 0.0)
+                        "snap_dist_m": float(s["snap_dist_m"] or 0.0),
+                        "lat": float(s["lat"]) if s.get("lat") is not None else None,
+                        "lon": float(s["lon"]) if s.get("lon") is not None else None
                     })
 
             candidate_stations.sort(key=lambda x: x["dist_along_route_km"])
@@ -271,11 +273,16 @@ def plan_fuel_trip(
                     "station_id": best_station["station_id"],
                     "station_name": best_station["name"],
                     "brand": best_station["brand"],
+                    "lat": best_station["lat"],
+                    "lon": best_station["lon"],
                     "distance_from_origin_km": round(best_station["dist_along_route_km"], 2),
+                    "at_distance_km": round(best_station["dist_along_route_km"], 1),
                     "arrival_fuel_l": round(current_fuel, 2),
                     "refuel_l": fuel_to_add,
+                    "refuel_liters_added": fuel_to_add,
                     "price_per_l": fuel_price_per_l,
                     "cost_inr": cost,
+                    "estimated_cost_inr": cost,
                     "estimated_arrival": est_arrival.strftime("%Y-%m-%d %H:%M:%S")
                 })
 

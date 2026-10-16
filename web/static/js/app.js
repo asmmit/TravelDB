@@ -665,14 +665,26 @@ document.addEventListener("DOMContentLoaded", async () => {
             calcBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Solving Route...`;
         }
 
+        let data;
         try {
             const res = await fetch("/api/fuel-plan", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload)
             });
-            const data = await res.json();
+            if (!res.ok) {
+                const errData = await res.json().catch(() => ({}));
+                showToast(errData.message || `Server returned error (${res.status})`, "error");
+                return;
+            }
+            data = await res.json();
+        } catch (netErr) {
+            console.error("Network communication error:", netErr);
+            showToast("Server connection error: Unable to reach Flask backend.", "error");
+            return;
+        }
 
+        try {
             if (data.status === "success" && data.plan) {
                 const plan = data.plan;
                 currentTripId = plan.trip_id;
@@ -682,9 +694,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
                 showToast(data.message || "Route calculation error", "error");
             }
-        } catch (err) {
-            console.error("Route error:", err);
-            showToast("Server communication error", "error");
+        } catch (renderErr) {
+            console.error("Route rendering error:", renderErr);
+            showToast("Error rendering route on map: " + renderErr.message, "error");
         } finally {
             if (calcBtn) {
                 calcBtn.disabled = false;
@@ -743,30 +755,44 @@ document.addEventListener("DOMContentLoaded", async () => {
         const stops = plan.refuel_stops || [];
         if (stops.length > 0) {
             stops.forEach((s, idx) => {
-                const marker = L.marker([s.lat, s.lon], {
-                    icon: L.divIcon({
-                        className: "pulse-refuel-pin",
-                        iconSize: [22, 22]
-                    })
-                }).bindPopup(`
-                    <div style="font-family:'Inter',sans-serif; min-width:210px;">
-                        <span style="background:#FEF3C7; color:#92400E; font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px; text-transform:uppercase;">Scheduled Refuel Stop #${idx + 1}</span>
-                        <h4 style="margin:4px 0 2px; color:#24261F; font-size:13px;">${s.station_name}</h4>
-                        <div style="font-size:11px; color:#5E6353;">At Corridor KM ${s.at_distance_km}</div>
-                        <div style="font-size:11px; margin-top:4px;">Arrive with: <strong>${s.arrival_fuel_l} L</strong></div>
-                        <div style="font-size:11px;">Add: <strong style="color:#556B2F;">${s.refuel_liters_added} L</strong> (Full Tank)</div>
-                        <div style="font-size:12px; font-weight:700; color:#B7410E; margin-top:2px;">Est. Cost: ₹ ${Math.round(s.estimated_cost_inr).toLocaleString()}</div>
-                    </div>
-                `).addTo(map);
-                stopMarkers.push(marker);
+                const lat = s.lat != null ? Number(s.lat) : (s.latitude != null ? Number(s.latitude) : null);
+                const lon = s.lon != null ? Number(s.lon) : (s.longitude != null ? Number(s.longitude) : null);
+                const atDist = s.at_distance_km ?? s.distance_from_origin_km ?? 0;
+                const refuelL = s.refuel_liters_added ?? s.refuel_l ?? 0;
+                const costInr = s.estimated_cost_inr ?? s.cost_inr ?? 0;
+                const arrFuel = s.arrival_fuel_l ?? 0;
+
+                if (lat != null && lon != null && !isNaN(lat) && !isNaN(lon)) {
+                    const marker = L.marker([lat, lon], {
+                        icon: L.divIcon({
+                            className: "pulse-refuel-pin",
+                            iconSize: [22, 22]
+                        })
+                    }).bindPopup(`
+                        <div style="font-family:'Inter',sans-serif; min-width:210px;">
+                            <span style="background:#FEF3C7; color:#92400E; font-size:10px; font-weight:700; padding:2px 6px; border-radius:4px; text-transform:uppercase;">Scheduled Refuel Stop #${idx + 1}</span>
+                            <h4 style="margin:4px 0 2px; color:#24261F; font-size:13px;">${s.station_name || "Fuel Station"}</h4>
+                            <div style="font-size:11px; color:#5E6353;">At Corridor KM ${atDist}</div>
+                            <div style="font-size:11px; margin-top:4px;">Arrive with: <strong>${arrFuel} L</strong></div>
+                            <div style="font-size:11px;">Add: <strong style="color:#556B2F;">${refuelL} L</strong> (Full Tank)</div>
+                            <div style="font-size:12px; font-weight:700; color:#B7410E; margin-top:2px;">Est. Cost: ₹ ${Math.round(costInr).toLocaleString()}</div>
+                        </div>
+                    `).addTo(map);
+                    stopMarkers.push(marker);
+                }
             });
 
             // Populate callout
             const s0 = stops[0];
+            const atDist0 = s0.at_distance_km ?? s0.distance_from_origin_km ?? 0;
+            const refuelL0 = s0.refuel_liters_added ?? s0.refuel_l ?? 0;
+            const costInr0 = s0.estimated_cost_inr ?? s0.cost_inr ?? 0;
+            const arrFuel0 = s0.arrival_fuel_l ?? 0;
+
             const nameEl = document.getElementById("callout-station-name");
             const detEl = document.getElementById("callout-details");
-            if (nameEl) nameEl.textContent = `${s0.station_name} • KM ${s0.at_distance_km}`;
-            if (detEl) detEl.innerHTML = `Arrive with ${s0.arrival_fuel_l} L &bull; Add <strong>${s0.refuel_liters_added} L</strong> to full tank &bull; Est. Cost: <strong>₹ ${Math.round(s0.estimated_cost_inr).toLocaleString()}</strong>`;
+            if (nameEl) nameEl.textContent = `${s0.station_name || "Fuel Station"} • KM ${atDist0}`;
+            if (detEl) detEl.innerHTML = `Arrive with ${arrFuel0} L &bull; Add <strong>${refuelL0} L</strong> to full tank &bull; Est. Cost: <strong>₹ ${Math.round(costInr0).toLocaleString()}</strong>`;
             if (callout) callout.style.display = "flex";
         } else {
             if (callout) callout.style.display = "none";
