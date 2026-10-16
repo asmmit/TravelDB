@@ -60,3 +60,13 @@ data/cache/
 data/osm/raw/
 *.log
 scratch/
+
+
+# Environment secrets
+.env.*
+!.env.example
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
