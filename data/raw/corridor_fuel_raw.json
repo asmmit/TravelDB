@@ -1,0 +1,2959 @@
+{
+  "elements": [
+    {
+      "type": "node",
+      "id": 248343706,
+      "lat": 13.0368733,
+      "lon": 80.2555597,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 248343893,
+      "lat": 13.037841,
+      "lon": 80.2562967,
+      "tags": {
+        "amenity": "fuel",
+        "created_by": "Potlatch 0.10f",
+        "name": "IOC"
+      }
+    },
+    {
+      "type": "node",
+      "id": 248344281,
+      "lat": 13.0378885,
+      "lon": 80.2569506,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "BP",
+        "brand:wikidata": "Q152057",
+        "brand:wikipedia": "en:BP",
+        "name": "BP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 257532624,
+      "lat": 12.9943244,
+      "lon": 80.1870765,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "brand:wikipedia": "en:Bharat Petroleum",
+        "compressed_air": "yes",
+        "name": "Bharat Petroleum",
+        "operator": "ASM Abdul Cader Co"
+      }
+    },
+    {
+      "type": "node",
+      "id": 301738571,
+      "lat": 13.0391669,
+      "lon": 80.2573351,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 301738572,
+      "lat": 13.0402403,
+      "lon": 80.2468562,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "name:en": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 301947513,
+      "lat": 13.0493343,
+      "lon": 80.25305,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 305933220,
+      "lat": 12.9796614,
+      "lon": 80.218483,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 308467144,
+      "lat": 13.0311284,
+      "lon": 80.2394414,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "opening_hours": "Mo-Su,PH 06:00-18:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 308467145,
+      "lat": 13.0337218,
+      "lon": 80.2382988,
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 308467150,
+      "lat": 13.0459529,
+      "lon": 80.2562406,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 310830860,
+      "lat": 12.9935494,
+      "lon": 80.1850866,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "compressed_air": "yes",
+        "name": "Shanthi Petrol Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 313135840,
+      "lat": 13.0534169,
+      "lon": 80.252032,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "name:en": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 313135912,
+      "lat": 13.0540764,
+      "lon": 80.2530457,
+      "tags": {
+        "amenity": "fuel",
+        "created_by": "Potlatch 0.10d"
+      }
+    },
+    {
+      "type": "node",
+      "id": 325787817,
+      "lat": 12.9097046,
+      "lon": 80.2503011,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil",
+        "operator": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 344405871,
+      "lat": 13.0674553,
+      "lon": 80.2524458,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 364572949,
+      "lat": 13.0247047,
+      "lon": 80.2065279,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "brand:wikipedia": "en:Shell plc",
+        "compressed_air": "yes",
+        "name": "Shell",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 364651023,
+      "lat": 13.0200917,
+      "lon": 80.1853891,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 365544723,
+      "lat": 13.0116259,
+      "lon": 80.2185178,
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes",
+        "created_by": "Potlatch 0.10f",
+        "name": "BP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 365983863,
+      "lat": 13.0120221,
+      "lon": 80.2197653,
+      "tags": {
+        "amenity": "fuel",
+        "created_by": "Potlatch 0.10f"
+      }
+    },
+    {
+      "type": "node",
+      "id": 366075202,
+      "lat": 13.0696245,
+      "lon": 80.1996608,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "compressed_air": "yes",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 366739410,
+      "lat": 13.0158863,
+      "lon": 80.2048651,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 367793382,
+      "lat": 13.0231114,
+      "lon": 80.2063585,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "compressed_air": "yes",
+        "name": "Indian Oil",
+        "opening_hours": "PH,Mo-Su 12:00+"
+      }
+    },
+    {
+      "type": "node",
+      "id": 368158463,
+      "lat": 13.0127799,
+      "lon": 80.2222772,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "BP",
+        "fuel:diesel": "yes",
+        "fuel:lpg": "yes",
+        "fuel:octane_80": "yes",
+        "name": "BP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 368158965,
+      "lat": 13.0112743,
+      "lon": 80.2229232,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "fuel:diesel": "yes",
+        "fuel:petrol": "yes",
+        "name": "BP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370972600,
+      "lat": 13.0259345,
+      "lon": 80.1753026,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "compressed_air": "yes",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370972606,
+      "lat": 13.0310451,
+      "lon": 80.1651264,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "created_by": "Potlatch 0.10f",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370977751,
+      "lat": 13.0465921,
+      "lon": 80.1197732,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370977763,
+      "lat": 13.0402991,
+      "lon": 80.1304112,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370977767,
+      "lat": 13.0386047,
+      "lon": 80.1330017,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "created_by": "Potlatch 0.10f",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370977769,
+      "lat": 13.0421889,
+      "lon": 80.1237763,
+      "tags": {
+        "amenity": "fuel",
+        "created_by": "Potlatch 0.10f",
+        "name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 375667931,
+      "lat": 13.0265542,
+      "lon": 80.2324615,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 378688538,
+      "lat": 13.0277462,
+      "lon": 80.2512876,
+      "tags": {
+        "addr:city": "Chennai",
+        "addr:street": "Pasumpon Muthuramalinga Thevar Salai",
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "compressed_air": "yes",
+        "name": "HP Petrol Bunk",
+        "official_name": "Hindustan Petroleum",
+        "opening_hours": "24/7",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 559841147,
+      "lat": 12.9437458,
+      "lon": 80.1347202,
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes",
+        "name": "petrol bunk",
+        "operator": "Bharat petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 559841148,
+      "lat": 12.9441544,
+      "lon": 80.1352387,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "compressed_air": "yes",
+        "name": "Indian Oil",
+        "operator": "Pacific Enterprises"
+      }
+    },
+    {
+      "type": "node",
+      "id": 595713126,
+      "lat": 13.0484551,
+      "lon": 80.2066281,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 610963138,
+      "lat": 13.0867504,
+      "lon": 80.2586838,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 674685508,
+      "lat": 13.1085927,
+      "lon": 80.2435965,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 687176659,
+      "lat": 13.07286,
+      "lon": 80.1888928,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 687176660,
+      "lat": 13.0718881,
+      "lon": 80.1879592,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "compressed_air": "yes",
+        "name": "Indian Oil",
+        "operator": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 694035914,
+      "lat": 12.9488925,
+      "lon": 80.1854622,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Essar",
+        "brand:wikidata": "Q5399372",
+        "name": "Essar Petrol station",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 694035915,
+      "lat": 12.9493847,
+      "lon": 80.1857038,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "fuel:biodiesel": "no",
+        "fuel:cng": "no",
+        "fuel:diesel": "yes",
+        "name": "HP petrol station",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 694035950,
+      "lat": 12.9498294,
+      "lon": 80.1856658,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "BP",
+        "brand:wikidata": "Q152057",
+        "brand:wikipedia": "en:BP",
+        "fuel:diesel": "yes",
+        "name": "BP",
+        "operator": "Immanuel Agency"
+      }
+    },
+    {
+      "type": "node",
+      "id": 694064937,
+      "lat": 12.920301,
+      "lon": 80.1845415,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 694096397,
+      "lat": 12.9655809,
+      "lon": 80.2003887,
+      "tags": {
+        "amenity": "fuel",
+        "name": "IBP Petrol Station",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 694158291,
+      "lat": 12.9640355,
+      "lon": 80.214439,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "diesel": "yes",
+        "name": "Bharat Petroleum",
+        "operator": "Bharat",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 978180615,
+      "lat": 13.0073497,
+      "lon": 80.2002828,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 996517640,
+      "lat": 12.9594013,
+      "lon": 80.2139555,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "fuel:diesel": "yes",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1145642233,
+      "lat": 12.8560784,
+      "lon": 80.0700462,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "compressed_air": "yes",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1184301864,
+      "lat": 13.031147,
+      "lon": 80.0355292,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1184301895,
+      "lat": 13.0383055,
+      "lon": 80.0525266,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1185702590,
+      "lat": 13.1151535,
+      "lon": 80.1016715,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1275649007,
+      "lat": 12.9770968,
+      "lon": 80.2511046,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "V.S.V. Agency"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1329325020,
+      "lat": 12.9186483,
+      "lon": 80.1958665,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1450886364,
+      "lat": 12.9686473,
+      "lon": 80.2571319,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "fuel:diesel": "no",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1451948429,
+      "lat": 12.9672226,
+      "lon": 80.2573585,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1453437494,
+      "lat": 12.967692,
+      "lon": 80.2574844,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1453803549,
+      "lat": 12.925815,
+      "lon": 80.1106934,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Bharat Fuel Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1488341120,
+      "lat": 13.0466076,
+      "lon": 80.1910336,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "BP",
+        "brand:wikidata": "Q152057",
+        "brand:wikipedia": "en:BP",
+        "name": "BP Petrol Pump"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1693534827,
+      "lat": 12.9211216,
+      "lon": 80.1661043,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum",
+        "operator": "Annai Agencies"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1710712621,
+      "lat": 12.9439409,
+      "lon": 80.1833049,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1885029649,
+      "lat": 13.0421141,
+      "lon": 80.259281,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "BP",
+        "brand:wikidata": "Q152057",
+        "brand:wikipedia": "en:BP",
+        "name": "BP",
+        "operator": "Thevar automobiles"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2013361108,
+      "lat": 12.9524776,
+      "lon": 80.1702264,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "brand:wikipedia": "en:Royal Dutch Shell",
+        "compressed_air": "yes",
+        "fuel:diesel": "yes",
+        "fuel:lpg": "no",
+        "fuel:octane_91": "yes",
+        "name": "Shell",
+        "operator": "SHELL"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2039504293,
+      "lat": 12.9489222,
+      "lon": 80.1835848,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2039508061,
+      "lat": 12.9509065,
+      "lon": 80.1741602,
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2211543181,
+      "lat": 12.8761596,
+      "lon": 80.2273012,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil",
+        "operator": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2878263802,
+      "lat": 12.9949579,
+      "lon": 80.1879445,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3014098218,
+      "lat": 12.9130277,
+      "lon": 80.142989,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3014098823,
+      "lat": 12.9229082,
+      "lon": 80.1508778,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3097009525,
+      "lat": 12.9225671,
+      "lon": 80.197052,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3546221883,
+      "lat": 12.9674951,
+      "lon": 80.2485479,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685008256,
+      "lat": 13.0452801,
+      "lon": 80.2182725,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685280058,
+      "lat": 13.0401531,
+      "lon": 80.2400751,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685381587,
+      "lat": 13.040274,
+      "lon": 80.2423014,
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes",
+        "name": "IndianOil",
+        "opening_hours": "Mo-Su 00:00-24:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685431628,
+      "lat": 13.0291289,
+      "lon": 80.2538708,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685563463,
+      "lat": 13.0338283,
+      "lon": 80.2448209,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685566217,
+      "lat": 13.0451808,
+      "lon": 80.2400027,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685567878,
+      "lat": 13.0453689,
+      "lon": 80.2404265,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685652294,
+      "lat": 13.0536069,
+      "lon": 80.2263575,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3685653044,
+      "lat": 13.0539215,
+      "lon": 80.234525,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3719884283,
+      "lat": 12.955029,
+      "lon": 79.9396139,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3725563305,
+      "lat": 12.9083732,
+      "lon": 80.2287564,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3829225725,
+      "lat": 12.9247788,
+      "lon": 80.2303371,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4056703681,
+      "lat": 12.9823866,
+      "lon": 80.2180571,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "brand:wikipedia": "en:Bharat Petroleum",
+        "compressed_air": "yes",
+        "fuel:1_25": "yes",
+        "fuel:diesel": "yes",
+        "fuel:e10": "no",
+        "fuel:octane_80": "yes",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4161672690,
+      "lat": 12.8768826,
+      "lon": 80.0785571,
+      "tags": {
+        "addr:street": "Grand Southern Trunk Road",
+        "amenity": "fuel",
+        "name": "Petrol Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4359466591,
+      "lat": 13.0649955,
+      "lon": 80.2432915,
+      "tags": {
+        "addr:street": "Valluvar Kottam High Road",
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "brand:wikipedia": "en:Bharat Petroleum",
+        "name": "Bharat Petroleum",
+        "name:en": "Bharat Petroleum",
+        "operator": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4410824051,
+      "lat": 13.0263102,
+      "lon": 80.2316753,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "fuel:lpg": "yes",
+        "name": "Indian Oil Propel",
+        "operator": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4451597746,
+      "lat": 13.0913433,
+      "lon": 80.1083136,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Essar Gas Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4488007996,
+      "lat": 13.0378648,
+      "lon": 80.1918972,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "brand:wikipedia": "en:Bharat Petroleum",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4488007997,
+      "lat": 13.0378858,
+      "lon": 80.1921778,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4627586392,
+      "lat": 13.082421,
+      "lon": 80.2091831,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "BP - Anna Nagar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4627597189,
+      "lat": 13.0920509,
+      "lon": 80.2512648,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "IOC - Otteri"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4646203389,
+      "lat": 13.1237034,
+      "lon": 80.2215577,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4733556322,
+      "lat": 13.0680837,
+      "lon": 80.1280612,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "BP - Thiruverkadu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4733590421,
+      "lat": 13.0677903,
+      "lon": 80.1306714,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "IOC - Thiruverkadu"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4783866221,
+      "lat": 12.9040344,
+      "lon": 80.1425781,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5227539919,
+      "lat": 13.1405016,
+      "lon": 79.9067149,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Thiruvallur Petrol Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5230370404,
+      "lat": 13.082056,
+      "lon": 80.167735,
+      "tags": {
+        "addr:city": "Chennai",
+        "addr:postcode": "600037",
+        "addr:street": "1st Ave, Mogappair West, Ambattur Industrial Estate",
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "compressed_air": "yes",
+        "fuel:diesel": "yes",
+        "fuel:petrol": "yes",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5300479524,
+      "lat": 12.8066819,
+      "lon": 79.8274347,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "Petrol bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5367536435,
+      "lat": 13.0154656,
+      "lon": 80.1840501,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "fuel:diesel": "yes",
+        "fuel:gasoline": "yes",
+        "fuel:octane_95": "yes",
+        "fuel:octane_98": "yes",
+        "name": "Bharat Petroleum",
+        "operator": "Bharat Petroleum",
+        "payment:cash": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5372705976,
+      "lat": 13.0875618,
+      "lon": 80.1947933,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "compressed_air": "yes",
+        "name": "HP Fuel Station",
+        "official_name": "Hindustan Petroleum",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5470654892,
+      "lat": 12.8157179,
+      "lon": 80.2292489,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Petrol Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5744866566,
+      "lat": 13.07198,
+      "lon": 80.2598553,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "operator": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6297611703,
+      "lat": 12.8495584,
+      "lon": 80.0641566,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "compressed_air": "yes",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6297611708,
+      "lat": 12.8064666,
+      "lon": 80.0282113,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6299266860,
+      "lat": 12.9695901,
+      "lon": 80.1499164,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "brand:wikipedia": "en:Bharat Petroleum",
+        "compressed_air": "yes",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6299266897,
+      "lat": 12.9684621,
+      "lon": 80.1499328,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6329440330,
+      "lat": 12.965443,
+      "lon": 80.1484205,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "check_date": "2019-02-23",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7057699185,
+      "lat": 13.0722894,
+      "lon": 80.2517008,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil",
+        "name:en": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7136010485,
+      "lat": 13.0504559,
+      "lon": 80.2564197,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "brand:wikipedia": "en:Bharat Petroleum",
+        "name": "Bharat Petroleum Petrol Station",
+        "name:en": "Bharat Petroleum Petrol Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7227780310,
+      "lat": 13.0885238,
+      "lon": 80.1697204,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "compressed_air": "yes",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7252470680,
+      "lat": 13.0584278,
+      "lon": 80.2425658,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7255733766,
+      "lat": 13.0558552,
+      "lon": 80.2487664,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "IndianOil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7266216586,
+      "lat": 12.8415711,
+      "lon": 79.900138,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "Indian oil petrol bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7266216587,
+      "lat": 12.8208378,
+      "lon": 79.8702551,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "Bharath petrolium petrol bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7266259386,
+      "lat": 12.8096075,
+      "lon": 79.8301758,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "Essar petrol bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7277050428,
+      "lat": 12.9408086,
+      "lon": 80.1317666,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "compressed_air": "yes",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7652513549,
+      "lat": 13.0202778,
+      "lon": 80.1300076,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum Petrol Pump"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8096467026,
+      "lat": 13.0472469,
+      "lon": 80.1995671,
+      "tags": {
+        "addr:street": "100, 80 Feet Road, Sathya Garden, Saligramam, Chennai, Tamil Nadu 600093",
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil",
+        "opening_hours": "Mo-Su 06:00-21:00"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8099976740,
+      "lat": 13.0370179,
+      "lon": 80.201671,
+      "tags": {
+        "addr:street": "2/59, Sowbhagya Colony, Sector 1, K. K. Nagar, Chennai, Tamil Nadu 600078",
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil Petrol Bunk",
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "website": "https://iocl.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8246733476,
+      "lat": 12.9496626,
+      "lon": 80.1855583,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "SUPERGAS",
+        "brand:wikidata": "Q50241615",
+        "fuel:lpg": "yes",
+        "name": "Supergas AutoLPG",
+        "operator": "Supergas",
+        "website": "https://www.supergas.com/auto-lpg",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8430613714,
+      "lat": 13.1268721,
+      "lon": 80.1537864,
+      "tags": {
+        "amenity": "fuel",
+        "name": "BP petrol"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9249922878,
+      "lat": 12.8815247,
+      "lon": 80.2451006,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9516144980,
+      "lat": 12.9541968,
+      "lon": 80.0900142,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9748204389,
+      "lat": 13.1299952,
+      "lon": 79.9663292,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9769927847,
+      "lat": 12.9517283,
+      "lon": 80.1697742,
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9859553175,
+      "lat": 12.9408177,
+      "lon": 80.0828988,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9865807613,
+      "lat": 13.0871154,
+      "lon": 80.0636019,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9992829272,
+      "lat": 13.103412,
+      "lon": 80.2527281,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10013621149,
+      "lat": 13.1236244,
+      "lon": 80.2016478,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10036356518,
+      "lat": 12.8400275,
+      "lon": 80.2273055,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10296799043,
+      "lat": 13.010343,
+      "lon": 80.2588836,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10316739373,
+      "lat": 13.0543034,
+      "lon": 80.2496574,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10567560612,
+      "lat": 13.0893234,
+      "lon": 80.1081502,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10593328485,
+      "lat": 12.9971505,
+      "lon": 80.2163258,
+      "tags": {
+        "addr:city": "Chennai",
+        "addr:housenumber": "137",
+        "addr:postcode": "600042",
+        "addr:street": "Velachery Main Road",
+        "amenity": "fuel",
+        "brand": "KR Fuels",
+        "fuel:lpg": "yes",
+        "name": "Kousalya Fuels",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10611618805,
+      "lat": 13.1349361,
+      "lon": 80.2155593,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Shell Retteri RTO"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10742896412,
+      "lat": 13.1397005,
+      "lon": 80.2176195,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10895057472,
+      "lat": 13.0646905,
+      "lon": 80.1977719,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10931210107,
+      "lat": 13.0687954,
+      "lon": 80.2558494,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11129270116,
+      "lat": 13.0016826,
+      "lon": 79.9915805,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11148087378,
+      "lat": 12.9424731,
+      "lon": 80.2530279,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11148087398,
+      "lat": 12.9469904,
+      "lon": 80.2538044,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11345759533,
+      "lat": 13.0790936,
+      "lon": 80.2499082,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11431846869,
+      "lat": 13.0301451,
+      "lon": 79.8659304,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11468853844,
+      "lat": 13.0565018,
+      "lon": 80.1000751,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11474824759,
+      "lat": 13.0618404,
+      "lon": 80.1436436,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11474824799,
+      "lat": 13.0621524,
+      "lon": 80.1465903,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11474824808,
+      "lat": 13.0611558,
+      "lon": 80.142327,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11477265267,
+      "lat": 13.0455489,
+      "lon": 80.0719538,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11477265276,
+      "lat": 13.0455685,
+      "lon": 80.0725451,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11484509093,
+      "lat": 12.9950979,
+      "lon": 80.0901878,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11484509094,
+      "lat": 12.9951799,
+      "lon": 80.0897634,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Go Gas",
+        "name": "Go Gas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11484539867,
+      "lat": 13.0621103,
+      "lon": 80.1507493,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Go Gas",
+        "name": "Go Gas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11617869405,
+      "lat": 13.0312675,
+      "lon": 80.1645244,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "compressed_air": "yes",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11626062275,
+      "lat": 12.9746968,
+      "lon": 80.1920646,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11629500452,
+      "lat": 13.0488261,
+      "lon": 80.1661892,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11659380992,
+      "lat": 13.0474709,
+      "lon": 80.0777345,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Nayara",
+        "brand:wikidata": "Q5399377",
+        "name": "Nayara"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11659437794,
+      "lat": 13.0464785,
+      "lon": 80.0783307,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11659453638,
+      "lat": 13.0158497,
+      "lon": 80.1031673,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11668255587,
+      "lat": 12.8102723,
+      "lon": 80.227998,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11668983770,
+      "lat": 12.9085119,
+      "lon": 80.2501864,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11672109403,
+      "lat": 13.0305993,
+      "lon": 80.0346999,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11672167321,
+      "lat": 13.0301216,
+      "lon": 80.0340028,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11672201345,
+      "lat": 13.0348115,
+      "lon": 80.0398322,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11672284927,
+      "lat": 13.0255377,
+      "lon": 80.0267255,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11675329541,
+      "lat": 12.8185479,
+      "lon": 80.0773021,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11782112649,
+      "lat": 13.1276031,
+      "lon": 80.2175373,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11782138276,
+      "lat": 13.0540708,
+      "lon": 80.2344005,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11786631296,
+      "lat": 13.0773865,
+      "lon": 80.2107125,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "TotalEnergies",
+        "brand:wikidata": "Q154037",
+        "name": "Total"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11786642103,
+      "lat": 13.0773833,
+      "lon": 80.208043,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "compressed_air": "yes",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11794966576,
+      "lat": 13.0936528,
+      "lon": 80.2412948,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11799462753,
+      "lat": 12.897129,
+      "lon": 79.8064002,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "JIO BP",
+        "brand:wikidata": "Q7311026"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11799646421,
+      "lat": 12.9437944,
+      "lon": 79.8640067,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11801717273,
+      "lat": 13.0133604,
+      "lon": 80.1024695,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11817783173,
+      "lat": 12.8931782,
+      "lon": 80.1095789,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11818459188,
+      "lat": 12.9983968,
+      "lon": 80.1035213,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11821038579,
+      "lat": 12.997544,
+      "lon": 80.1048883,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11821092425,
+      "lat": 13.0699371,
+      "lon": 80.1809854,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11821379636,
+      "lat": 12.867248,
+      "lon": 80.226778,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11824312757,
+      "lat": 12.8873817,
+      "lon": 80.1840488,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11824517918,
+      "lat": 13.0210393,
+      "lon": 80.2251942,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11824686707,
+      "lat": 12.9090201,
+      "lon": 80.0685128,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11826790808,
+      "lat": 12.897958,
+      "lon": 80.1629042,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11826825173,
+      "lat": 12.8874211,
+      "lon": 80.0259075,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11827284270,
+      "lat": 12.8952079,
+      "lon": 80.0499031,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11830145681,
+      "lat": 13.1191099,
+      "lon": 80.0879181,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Reliance",
+        "compressed_air": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11832552853,
+      "lat": 13.1340559,
+      "lon": 80.1872518,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11832803585,
+      "lat": 12.9269798,
+      "lon": 80.2515747,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11833423908,
+      "lat": 12.8889527,
+      "lon": 80.1987376,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11835030329,
+      "lat": 13.0458131,
+      "lon": 80.2398536,
+      "tags": {
+        "amenity": "fuel",
+        "description": "LPG",
+        "fuel:lpg": "yes",
+        "name": "Go Gas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11906447554,
+      "lat": 12.9712243,
+      "lon": 80.1430289,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "brand:wikipedia": "en:Hindustan Petroleum",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12246143090,
+      "lat": 13.142239,
+      "lon": 79.9013411,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Reliance petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12309195199,
+      "lat": 12.917494,
+      "lon": 80.1893385,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Nayara",
+        "brand:wikidata": "Q5399377",
+        "check_date": "2024-11-03",
+        "name": "Nayara"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12470987701,
+      "lat": 12.8670551,
+      "lon": 80.2429093,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "Hindustan Petroleum",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12556161501,
+      "lat": 12.9156141,
+      "lon": 80.0731147,
+      "tags": {
+        "addr:street": "Tambaram - Mudichur - Sriperumbudur Road",
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12581525290,
+      "lat": 13.1250522,
+      "lon": 80.2045223,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "check_date": "2025-02-12",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12581525296,
+      "lat": 13.1380292,
+      "lon": 80.217881,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "check_date": "2025-02-12",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12581554802,
+      "lat": 13.1363453,
+      "lon": 80.230635,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "check_date": "2025-02-12",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12581554807,
+      "lat": 13.130475,
+      "lon": 80.2389268,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "check_date": "2025-02-12",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12582227793,
+      "lat": 13.1430126,
+      "lon": 80.2229114,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "check_date": "2025-02-12",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12876344925,
+      "lat": 12.9498708,
+      "lon": 79.8571093,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12876394145,
+      "lat": 12.9315366,
+      "lon": 79.8986908,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 12995641935,
+      "lat": 12.8307949,
+      "lon": 80.2239543,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13119267725,
+      "lat": 12.9528896,
+      "lon": 79.9327134,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Shell",
+        "brand:wikidata": "Q110716465",
+        "name": "Shell"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13119275729,
+      "lat": 12.9491347,
+      "lon": 79.9273127,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13124782271,
+      "lat": 12.9012627,
+      "lon": 79.9317928,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13157311522,
+      "lat": 12.9671484,
+      "lon": 79.9541677,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13157311523,
+      "lat": 12.967771,
+      "lon": 79.9532502,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13157311524,
+      "lat": 12.9640021,
+      "lon": 79.9477598,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13607099593,
+      "lat": 13.072892,
+      "lon": 80.1822637,
+      "tags": {
+        "amenity": "fuel",
+        "check_date": "2026-02-28",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13638977909,
+      "lat": 12.9699504,
+      "lon": 80.218018,
+      "tags": {
+        "amenity": "fuel",
+        "check_date": "2026-03-11",
+        "name": "K. R. Fuels",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13955229302,
+      "lat": 13.0750739,
+      "lon": 80.2308543,
+      "tags": {
+        "amenity": "fuel",
+        "check_date": "2026-06-21",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13955229502,
+      "lat": 13.0750323,
+      "lon": 80.2307142,
+      "tags": {
+        "amenity": "fuel",
+        "check_date": "2026-06-21",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13968689502,
+      "lat": 13.070381,
+      "lon": 80.203997,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Supergas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13968707201,
+      "lat": 13.072536,
+      "lon": 80.2020985,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Trugaz Auto LPG"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13987389710,
+      "lat": 12.9546102,
+      "lon": 80.1603677,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "compressed_air": "yes",
+        "fuel:diesel": "yes",
+        "fuel:petrol": "yes",
+        "name": "Hindustan Petroleum",
+        "official_name": "Hindustan Petroleum",
+        "short_name": "HP"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13987389712,
+      "lat": 12.9544908,
+      "lon": 80.1607361,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "compressed_air": "yes",
+        "fuel:diesel": "yes",
+        "fuel:petrol": "yes",
+        "name": "Bharat Petroleum",
+        "operator": "Sri Vidhur Agencies",
+        "self_service": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 13990412460,
+      "lat": 12.9546654,
+      "lon": 80.1598292,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Go Gas",
+        "name": "Go Gas"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14059881502,
+      "lat": 13.0928078,
+      "lon": 80.2320844,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Nayara Energy",
+        "opening_hours": "24/7",
+        "phone": "+9198845 31387",
+        "website": "https://nayaraenergy.com/"
+      }
+    },
+    {
+      "type": "node",
+      "id": 14059886601,
+      "lat": 13.09795,
+      "lon": 80.2385171,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Bharat Petroleum Pump Station Ayanavaram",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1141197870,
+      "lat": 12.8377792,
+      "lon": 79.7026269,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1141197876,
+      "lat": 12.8175096,
+      "lon": 79.7343767,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1141197898,
+      "lat": 12.8495673,
+      "lon": 79.6935185,
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1457312902,
+      "lat": 12.8732734,
+      "lon": 79.747122,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2334684685,
+      "lat": 13.0956593,
+      "lon": 79.6587906,
+      "tags": {
+        "amenity": "fuel",
+        "name": "Reliance",
+        "operator": "Reliance Industries  Ltd."
+      }
+    },
+    {
+      "type": "node",
+      "id": 4448581989,
+      "lat": 13.0848735,
+      "lon": 79.6660499,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "HP Petrol Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4448582589,
+      "lat": 13.0826333,
+      "lon": 79.6708275,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "Petrol Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5302186223,
+      "lat": 12.8440755,
+      "lon": 79.6997081,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5302196128,
+      "lat": 12.8370411,
+      "lon": 79.706555,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "brand:wikipedia": "en:Indian Oil Corporation",
+        "name": "Indian Oil Petrol Station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7259892685,
+      "lat": 12.8732146,
+      "lon": 79.6290835,
+      "tags": {
+        "addr:housenumber": "192/1A2A",
+        "addr:postcode": "631551",
+        "addr:street": "Thiruppikuzhi",
+        "amenity": "fuel",
+        "name:en": "Essar fuel pump",
+        "phone": "9500004100"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7266257991,
+      "lat": 12.8056358,
+      "lon": 79.762377,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil",
+        "name:en": "Indian Oil Petrol Bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7266257994,
+      "lat": 12.8159013,
+      "lon": 79.7472055,
+      "tags": {
+        "amenity": "fuel",
+        "name:en": "HP petrol bunk"
+      }
+    },
+    {
+      "type": "node",
+      "id": 9847262904,
+      "lat": 13.084915,
+      "lon": 79.6755564,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10107498810,
+      "lat": 12.8866146,
+      "lon": 79.5959165,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Hindustan Petroleum",
+        "brand:wikidata": "Q1619375",
+        "check_date": "2025-01-20",
+        "name": "HP",
+        "official_name": "Hindustan Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10107498811,
+      "lat": 12.8879209,
+      "lon": 79.5962953,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Essar",
+        "brand:wikidata": "Q5399372",
+        "check_date": "2025-01-20",
+        "name": "Essar"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10107506038,
+      "lat": 12.8960643,
+      "lon": 79.574431,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10107506039,
+      "lat": 12.8964639,
+      "lon": 79.571904,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 10918092695,
+      "lat": 12.8731346,
+      "lon": 79.6697026,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11147669060,
+      "lat": 12.8395825,
+      "lon": 79.7135453,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Indian Oil",
+        "brand:wikidata": "Q1289348",
+        "name": "Indian Oil"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11434345456,
+      "lat": 13.1161542,
+      "lon": 79.6458453,
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Bharat Petroleum",
+        "brand:wikidata": "Q854826",
+        "name": "Bharat Petroleum"
+      }
+    }
+  ]
+}

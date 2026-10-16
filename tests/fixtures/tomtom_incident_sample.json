@@ -1,0 +1,54 @@
+{
+  "incidents": [
+    {
+      "id": "tt_inc_nh48_001",
+      "properties": {
+        "id": "tt_inc_nh48_001",
+        "iconCategory": 1,
+        "magnitudeOfDelay": 2,
+        "incidentCategory": "accident",
+        "events": [
+          {
+            "code": 101,
+            "description": "Accident involving heavy goods vehicle, single lane blocked"
+          }
+        ],
+        "startTime": "2026-10-15T22:30:00Z",
+        "endTime": "2026-10-16T04:00:00Z",
+        "from": "Kanchipuram Bypass",
+        "to": "Walajapet Toll Plaza",
+        "length": 1850.5,
+        "delay": 420
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [79.7036, 12.8342]
+      }
+    },
+    {
+      "id": "tt_inc_nh48_002",
+      "properties": {
+        "id": "tt_inc_nh48_002",
+        "iconCategory": 8,
+        "magnitudeOfDelay": 3,
+        "incidentCategory": "road_works",
+        "events": [
+          {
+            "code": 701,
+            "description": "Culvert repair and road resurfacing work in progress"
+          }
+        ],
+        "startTime": "2026-10-14T08:00:00Z",
+        "endTime": "2026-10-20T18:00:00Z",
+        "from": "Sriperumbudur",
+        "to": "Mambakkam",
+        "length": 3400.0,
+        "delay": 600
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [79.9406, 12.9692]
+      }
+    }
+  ]
+}

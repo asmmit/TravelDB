@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelDB — Fuel-Aware Travel Decision Support System</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Style (Olive Green, Rusty Red & Warm Beige Theme) -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Top Header: Profile Avatar, Branding, 3 Tab Navigation & Live Stats -->
+    <header class="app-header">
+        <div class="header-left">
+            <!-- Google Maps-Style Profile Section (Top-Left) -->
+            <button class="profile-avatar-btn has-tooltip" id="btn-profile" aria-label="User Profile" data-desc="Click to view and edit your traveler profile, user ID, age, and emergency contact numbers.">
+                <div class="avatar-circle" id="header-avatar-initials">AS</div>
+                <span class="avatar-status-dot"></span>
+                <span class="info-icon" title="View Profile"><i class="fa-solid fa-circle-info"></i></span>
+            </button>
+
+            <div class="brand">
+                <div class="brand-icon has-tooltip" data-desc="TravelDB Fuel-Aware Transportation Decision Support System for South India NH 48 Corridor.">
+                    <i class="fa-solid fa-gas-pump"></i>
+                </div>
+                <div class="brand-text">
+                    <div class="brand-title-wrap">
+                        <h1>TravelDB</h1>
+                        <span class="corridor-tag">NH 48 South India</span>
+                        <span class="live-pill"><span class="pulse-dot"></span> LIVE</span>
+                    </div>
+                    <p class="brand-sub">Decision Support &bull; Olive & Earthy Edition</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Center: 3 Page Divisions / Tabs -->
+        <nav class="header-tabs">
+            <button class="nav-tab active has-tooltip" data-tab="tab-planner" data-desc="Interactive Highway Route Planner, Gas Station Problem Solver, and Live Map View.">
+                <i class="fa-solid fa-compass"></i>
+                <span>Journey Planner</span>
+                <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+            </button>
+            <button class="nav-tab has-tooltip" data-tab="tab-saved" data-desc="View saved itineraries, edit fuel plans, and write travel checklists & notes.">
+                <i class="fa-solid fa-bookmark"></i>
+                <span>Saved Trips & Notes</span>
+                <span class="badge-count" id="badge-saved-count">1</span>
+                <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+            </button>
+            <button class="nav-tab has-tooltip" data-tab="tab-legal" data-desc="Academic background, Terms & Conditions, MoRTH blackspot liability, and privacy policy.">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>About & Legal</span>
+                <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+            </button>
+        </nav>
+
+        <!-- Right: Corridor Stats Badges -->
+        <div class="header-stats">
+            <div class="stat-badge has-tooltip" data-desc="Number of routable highway intersections and road nodes in the Chennai-Vellore network graph.">
+                <div class="stat-top">
+                    <i class="fa-solid fa-circle-nodes text-olive"></i>
+                    <span class="stat-val" id="stat-nodes">45,518</span>
+                    <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                </div>
+                <span class="stat-lbl">Road Nodes</span>
+            </div>
+            <div class="stat-badge has-tooltip" data-desc="Directed road edges expanded bidirectionally for divided carriage ways.">
+                <div class="stat-top">
+                    <i class="fa-solid fa-route text-olive"></i>
+                    <span class="stat-val" id="stat-edges">84,908</span>
+                    <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                </div>
+                <span class="stat-lbl">Directed Edges</span>
+            </div>
+            <div class="stat-badge has-tooltip" data-desc="Verified retail fuel stations with official IOCL petrol and diesel prices.">
+                <div class="stat-top">
+                    <i class="fa-solid fa-oil-can text-rust"></i>
+                    <span class="stat-val" id="stat-pumps">240</span>
+                    <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                </div>
+                <span class="stat-lbl">Fuel Pumps</span>
+            </div>
+            <div class="stat-badge highlight-hazard has-tooltip" data-desc="High-fatality accident blackspots identified by the Ministry of Road Transport and Highways (MoRTH).">
+                <div class="stat-top">
+                    <i class="fa-solid fa-triangle-exclamation text-rust"></i>
+                    <span class="stat-val" id="stat-blackspots">10</span>
+                    <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                </div>
+                <span class="stat-lbl">Fatal Blackspots</span>
+            </div>
+            <div class="stat-badge highlight-weather has-tooltip" data-desc="Live Open-Meteo weather grid points measuring precipitation, wind, and pavement drag.">
+                <div class="stat-top">
+                    <i class="fa-solid fa-cloud-sun text-olive"></i>
+                    <span class="stat-val" id="stat-weather">Live</span>
+                    <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                </div>
+                <span class="stat-lbl">Weather Feeds</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area: 3 Page Divisions -->
+    <main class="app-body">
+
+        <!-- ===================================================================
+             PAGE DIVISION 1: JOURNEY PLANNER & DECISION SUPPORT
+             =================================================================== -->
+        <section id="tab-planner" class="page-division active">
+            <div class="planner-layout">
+                <!-- Left Sidebar: Controls -->
+                <aside class="sidebar">
+                    <!-- Journey Config Card -->
+                    <div class="panel-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-sliders text-olive"></i> Journey Configuration</h2>
+                            <span class="info-icon has-tooltip" data-desc="Configure trip endpoints, vehicle specifications, and fuel safety margins for the Gas Station Problem solver."><i class="fa-solid fa-circle-info"></i></span>
+                        </div>
+
+                        <!-- Origin Point -->
+                        <div class="form-group">
+                            <label for="select-origin">
+                                <span class="label-left"><i class="fa-solid fa-location-dot text-olive"></i> Origin Point</span>
+                                <span class="info-icon has-tooltip" data-desc="Starting location along the NH 48 highway corridor, snapped to the nearest road network node."><i class="fa-solid fa-circle-info"></i></span>
+                            </label>
+                            <select id="select-origin" class="form-control">
+                                <option value="">Loading highway landmarks...</option>
+                            </select>
+                        </div>
+
+                        <!-- Destination Point -->
+                        <div class="form-group">
+                            <label for="select-destination">
+                                <span class="label-left"><i class="fa-solid fa-flag-checkered text-rust"></i> Destination Point</span>
+                                <span class="info-icon has-tooltip" data-desc="Target destination along NH 48 corridor (e.g., Damal or Vellore Fort)."><i class="fa-solid fa-circle-info"></i></span>
+                            </label>
+                            <select id="select-destination" class="form-control">
+                                <option value="">Loading highway landmarks...</option>
+                            </select>
+                        </div>
+
+                        <!-- Vehicle Profile -->
+                        <div class="form-group">
+                            <label for="select-vehicle">
+                                <span class="label-left"><i class="fa-solid fa-car-side text-olive"></i> Vehicle Profile</span>
+                                <span class="info-icon has-tooltip" data-desc="Select vehicle model to apply real-world tank capacity and fuel consumption rates."><i class="fa-solid fa-circle-info"></i></span>
+                            </label>
+                            <select id="select-vehicle" class="form-control">
+                                <option value="">Loading vehicle fleet...</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Vehicle Spec Card with Visual Tank Fill -->
+                        <div class="vehicle-spec-card" id="vehicle-spec-box">
+                            <div class="spec-row">
+                                <div class="spec-col has-tooltip" data-desc="Total usable fuel tank capacity for this vehicle class in liters.">
+                                    <span class="spec-key">Capacity</span>
+                                    <span class="spec-val" id="spec-tank">-- L</span>
+                                </div>
+                                <div class="spec-col has-tooltip" data-desc="ARAI rated fuel economy in kilometers per liter under standard driving cycles.">
+                                    <span class="spec-key">Rated Mileage</span>
+                                    <span class="spec-val" id="spec-mileage">-- km/L</span>
+                                </div>
+                                <div class="spec-col has-tooltip" data-desc="Fuel type used to look up official retail prices in Tamil Nadu / Karnataka.">
+                                    <span class="spec-key">Fuel Type</span>
+                                    <span class="spec-val" id="spec-fuel">--</span>
+                                </div>
+                            </div>
+                            <div class="tank-visual-wrap has-tooltip" data-desc="Visual fuel level indicator inside your tank. When fuel drops below reserve, an alert triggers.">
+                                <div class="tank-visual-bar">
+                                    <div class="tank-visual-fill" id="tank-visual-fill" style="width: 25%;"></div>
+                                </div>
+                                <div class="tank-visual-labels">
+                                    <span>Empty</span>
+                                    <span>Reserve</span>
+                                    <span>Full</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Initial Fuel Slider -->
+                        <div class="form-group slider-group">
+                            <div class="slider-header">
+                                <label for="slider-initial-fuel">
+                                    <span class="label-left"><i class="fa-solid fa-gas-pump text-olive"></i> Initial Fuel in Tank</span>
+                                    <span class="info-icon has-tooltip" data-desc="Current fuel volume present in the vehicle before starting the journey. Test with low fuel (< 5.0 L) to observe automatic refuel stop scheduling."><i class="fa-solid fa-circle-info"></i></span>
+                                </label>
+                                <span class="slider-pill" id="val-initial-fuel">4.0 L</span>
+                            </div>
+                            <input type="range" id="slider-initial-fuel" min="1.0" max="45.0" step="0.5" value="4.0" class="range-slider">
+                            <small class="slider-hint">Simulate constrained fuel to trigger the Gas Station Problem solver.</small>
+                        </div>
+
+                        <!-- Safety Reserve Slider -->
+                        <div class="form-group slider-group">
+                            <div class="slider-header">
+                                <label for="slider-reserve">
+                                    <span class="label-left"><i class="fa-solid fa-shield-halved text-rust"></i> Safety Reserve Threshold</span>
+                                    <span class="info-icon has-tooltip" data-desc="Minimum emergency fuel reserve (in liters) that must be maintained in the tank at all times to guarantee zero stranding."><i class="fa-solid fa-circle-info"></i></span>
+                                </label>
+                                <span class="slider-pill" id="val-reserve">3.0 L</span>
+                            </div>
+                            <input type="range" id="slider-reserve" min="1.0" max="10.0" step="0.5" value="3.0" class="range-slider">
+                            <small class="slider-hint">Guarantees vehicle reaches a pump before falling below this limit.</small>
+                        </div>
+
+                        <!-- Routing Objective -->
+                        <div class="form-group">
+                            <label class="icon-label">
+                                <span class="label-left"><i class="fa-solid fa-route text-olive"></i> Routing Objective</span>
+                                <span class="info-icon has-tooltip" data-desc="Objective weight function used by Dijkstra algorithm: Fastest (travel time), Safest (minimum risk score), or Shortest (distance)."><i class="fa-solid fa-circle-info"></i></span>
+                            </label>
+                            <div class="objective-buttons">
+                                <button type="button" class="btn-obj active has-tooltip" data-obj="fastest" data-desc="Minimizes travel time using road design speeds and traffic flow.">
+                                    <i class="fa-solid fa-bolt"></i> Fastest
+                                </button>
+                                <button type="button" class="btn-obj has-tooltip" data-obj="safest" data-desc="Minimizes combined edge risk from accident history and weather.">
+                                    <i class="fa-solid fa-shield-heart"></i> Safest
+                                </button>
+                                <button type="button" class="btn-obj has-tooltip" data-obj="shortest" data-desc="Minimizes pure geometric road distance in kilometers.">
+                                    <i class="fa-solid fa-ruler"></i> Shortest
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Blackspot Avoidance Toggle -->
+                        <div class="form-check-card has-tooltip" data-desc="Applies a 3x penalty multiplier to road edges containing MoRTH fatal accident blackspots.">
+                            <input type="checkbox" id="check-avoid-blackspots" checked>
+                            <label for="check-avoid-blackspots">
+                                <i class="fa-solid fa-road-barrier text-rust"></i> Avoid MoRTH Fatal Blackspots
+                            </label>
+                            <span class="info-icon"><i class="fa-solid fa-circle-info"></i></span>
+                        </div>
+
+                        <!-- Primary Route Action Button -->
+                        <button id="btn-calculate" class="btn btn-primary btn-glow has-tooltip" data-desc="Runs Dijkstra graph router and 2-Stage Gas Station Problem solver in MySQL + C-Core in-memory graph.">
+                            <i class="fa-solid fa-magnifying-glass-location"></i> Compute Fuel-Safe Route
+                        </button>
+                    </div>
+
+                    <!-- Live Trip Simulation & Reroute -->
+                    <div class="panel-card simulation-box">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-microchip text-rust"></i> Live Trip Simulation</h3>
+                            <span class="info-icon has-tooltip" data-desc="Test real-time highway emergencies. Atomic rerouting recalculates paths and logs to REROUTE_EVENT."><i class="fa-solid fa-circle-info"></i></span>
+                        </div>
+                        <p class="sim-desc">Simulate emergency low fuel to trigger mid-trip reroute with ACID transaction logging:</p>
+                        <div class="btn-group-sim">
+                            <button id="btn-sim-low-fuel" class="btn btn-warning has-tooltip" data-desc="Simulates low fuel alarm at KM 35 with 2.0 L left. Reroutes to nearest pump.">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Simulate Low Fuel (2.0 L)
+                            </button>
+                            <button id="btn-open-report" class="btn btn-secondary has-tooltip" data-desc="Submit crowdsourced road hazard (pothole, waterlogging, breakdown) to MySQL.">
+                                <i class="fa-solid fa-bullhorn"></i> Report Hazard
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Map Highway Overlays Toggle -->
+                    <div class="panel-card layers-box">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-layer-group text-olive"></i> Highway Overlays</h3>
+                            <span class="info-icon has-tooltip" data-desc="Toggle spatial map layers rendered with Leaflet.js."><i class="fa-solid fa-circle-info"></i></span>
+                        </div>
+                        <label class="toggle-row has-tooltip" data-desc="Display 240+ retail fuel stations along the corridor with official pricing.">
+                            <input type="checkbox" id="layer-pumps" checked>
+                            <span class="toggle-label"><i class="fa-solid fa-gas-pump text-olive"></i> 240+ Verified Fuel Stations</span>
+                        </label>
+                        <label class="toggle-row has-tooltip" data-desc="Display 10 MoRTH accident blackspot shields with fatality statistics.">
+                            <input type="checkbox" id="layer-blackspots" checked>
+                            <span class="toggle-label"><i class="fa-solid fa-triangle-exclamation text-rust"></i> 10 MoRTH Fatal Blackspots</span>
+                        </label>
+                        <label class="toggle-row has-tooltip" data-desc="Display live Open-Meteo weather observation points with rain and wind telemetry.">
+                            <input type="checkbox" id="layer-weather" checked>
+                            <span class="toggle-label"><i class="fa-solid fa-cloud-sun text-olive"></i> Open-Meteo Weather Grid</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Right Viewport: Leaflet Map & Floating Results Card -->
+                <div class="map-viewport">
+                    <div id="map"></div>
+
+                    <!-- Floating Results & Turn-by-Turn Card -->
+                    <div class="results-drawer" id="results-card">
+                        <div class="drawer-header">
+                            <div class="drawer-title">
+                                <i class="fa-solid fa-route text-olive"></i>
+                                <span>Optimal Itinerary</span>
+                                <span class="tag-feasibility" id="tag-feasibility">FEASIBLE</span>
+                            </div>
+                            <div class="drawer-actions">
+                                <button class="btn-save-trip-header has-tooltip" id="btn-save-trip-drawer" data-desc="Save this calculated trip plan, fuel stops, and itinerary to your Saved Trips profile.">
+                                    <i class="fa-solid fa-bookmark"></i> Save This Trip
+                                </button>
+                                <button class="btn-close-drawer" id="btn-close-results" aria-label="Close Results"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Results Key Metrics -->
+                        <div class="metrics-grid">
+                            <div class="metric-box has-tooltip" data-desc="Total highway distance along the selected NH 48 route.">
+                                <span class="metric-lbl">Total Distance</span>
+                                <span class="metric-val" id="res-distance">80.3 km</span>
+                            </div>
+                            <div class="metric-box has-tooltip" data-desc="Estimated driving duration based on design speeds and traffic.">
+                                <span class="metric-lbl">Est. Duration</span>
+                                <span class="metric-val" id="res-duration">69 mins</span>
+                            </div>
+                            <div class="metric-box has-tooltip" data-desc="Total fuel consumed under road friction and weather drag factors.">
+                                <span class="metric-lbl">Fuel Consumed</span>
+                                <span class="metric-val" id="res-fuel">4.75 L</span>
+                            </div>
+                            <div class="metric-box has-tooltip" data-desc="Number of mandatory refueling stops required to avoid stranding.">
+                                <span class="metric-lbl">Refuel Stops</span>
+                                <span class="metric-val text-rust" id="res-stops">1 Stop</span>
+                            </div>
+                            <div class="metric-box highlight-cost has-tooltip" data-desc="Estimated refueling cost in Indian Rupees calculated from official IOCL prices.">
+                                <span class="metric-lbl">Refuel Cost</span>
+                                <span class="metric-val text-olive" id="res-cost">₹ 3,369</span>
+                            </div>
+                        </div>
+
+                        <!-- Refuel Stop Details Callout -->
+                        <div class="refuel-callout" id="refuel-callout-box">
+                            <div class="callout-icon"><i class="fa-solid fa-gas-pump"></i></div>
+                            <div class="callout-content">
+                                <h4 id="callout-station-name">Bharat Petroleum (BPCL) &bull; KM 7.7</h4>
+                                <p id="callout-details">Arrive with 3.56 L &bull; Add <strong>33.44 L</strong> to full tank &bull; Est. Cost: <strong>₹ 3,369.08</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Turn Instructions Accordion -->
+                        <div class="turns-accordion">
+                            <button class="turns-toggle" id="btn-toggle-turns">
+                                <span><i class="fa-solid fa-diamond-turn-right text-olive"></i> Turn-by-Turn Guidance (<span id="turns-count">9 turns</span>)</span>
+                                <i class="fa-solid fa-chevron-down" id="turns-icon"></i>
+                            </button>
+                            <div class="turns-list" id="turns-container">
+                                <div class="turn-step">Depart Poonamallee on NH 48 westbound</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             PAGE DIVISION 2: SAVED TRIPS & CUSTOM TRAVEL NOTES
+             =================================================================== -->
+        <section id="tab-saved" class="page-division">
+            <div class="saved-layout">
+                <div class="saved-container">
+                    <div class="section-title-wrap">
+                        <div class="title-left">
+                            <h2><i class="fa-solid fa-bookmark text-olive"></i> Saved Trip Plans & Travel Notes</h2>
+                            <p>Manage bookmarked highway itineraries, adjust fuel checklists, and edit your custom travel notes.</p>
+                        </div>
+                        <div class="title-right">
+                            <button class="btn btn-primary has-tooltip" id="btn-new-trip-shortcut" data-desc="Switch back to Journey Planner to calculate and save a new corridor route.">
+                                <i class="fa-solid fa-plus"></i> Plan New Trip
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Saved Trips Grid -->
+                    <div class="saved-trips-grid" id="saved-trips-list">
+                        <!-- Loaded dynamically via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             PAGE DIVISION 3: ABOUT US, TERMS, LEGAL & DATA ATTRIBUTIONS
+             =================================================================== -->
+        <section id="tab-legal" class="page-division">
+            <div class="legal-layout">
+                <div class="legal-container">
+                    <!-- About Section -->
+                    <article class="legal-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-graduation-cap text-olive"></i> About TravelDB Decision Support System</h2>
+                            <span class="info-icon has-tooltip" data-desc="Academic context and algorithmic architecture of the TravelDB project."><i class="fa-solid fa-circle-info"></i></span>
+                        </div>
+                        <p class="lead-text">
+                            <strong>TravelDB</strong> is an intelligent, fuel-aware travel decision support system built specifically for the 
+                            <strong>Chennai – Vellore – Bengaluru highway corridor (NH 48 / AH 45)</strong> in South India.
+                        </p>
+                        <p>
+                            Designed as an advanced Interdisciplinary Design Project (IDP) and Database Management Systems (DBMS) thesis, 
+                            the platform bridges relational ACID guarantees with high-speed graph routing to solve the classic 
+                            <strong>Gas Station Problem with Non-Uniform Pricing and Safety Reserves</strong>.
+                        </p>
+
+                        <div class="feature-pills-row">
+                            <div class="feat-pill"><i class="fa-solid fa-database text-olive"></i> MySQL 8.0 System of Record (BCNF & SRID 4326)</div>
+                            <div class="feat-pill"><i class="fa-solid fa-network-wired text-olive"></i> C-Core In-Memory Routing (sub-10ms Dijkstra)</div>
+                            <div class="feat-pill"><i class="fa-solid fa-shield-halved text-rust"></i> MoRTH High-Fatality Blackspot Avoidance</div>
+                            <div class="feat-pill"><i class="fa-solid fa-cloud-sun-rain text-olive"></i> Real-time Open-Meteo Weather Drag Factors</div>
+                        </div>
+                    </article>
+
+                    <!-- Terms & Conditions Section -->
+                    <article class="legal-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-scale-balanced text-rust"></i> Terms of Service & Navigation Disclaimers</h2>
+                        </div>
+                        <div class="legal-body">
+                            <h3>1. Advisory Purpose Only</h3>
+                            <p>
+                                All routes, fuel consumption estimations, and arrival predictions computed by TravelDB are generated using mathematical models, 
+                                ARAI standard mileage figures, and historical road gradients. Actual highway fuel consumption may vary depending on driver behavior, 
+                                vehicle cargo, air conditioning usage, and live traffic congestion. TravelDB is an advisory decision support system; 
+                                drivers must obey official Indian road signs, speed limits, and traffic police directives at all times.
+                            </p>
+
+                            <h3>2. MoRTH Accident Blackspot Data Attribution</h3>
+                            <p>
+                                Highway accident blackspots and fatality statistics displayed in this application are derived from official public reports published by the 
+                                <strong>Ministry of Road Transport and Highways (MoRTH), Government of India</strong>. High-fatality zones are indicated to help drivers 
+                                exercise extra vigilance and do not imply that any road authority has endorsed or audited this tool.
+                            </p>
+
+                            <h3>3. Fuel Pricing & Station Availability</h3>
+                            <p>
+                                Retail fuel pricing data is based on official Indian Oil Corporation Limited (IOCL) benchmark district rates for Tamil Nadu and Karnataka. 
+                                Operating hours, pump amenities, and dispensing availability at individual fuel stations are subject to independent vendor operations.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Privacy & Emergency Contact Policy -->
+                    <article class="legal-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-user-shield text-olive"></i> Privacy Policy & Emergency Contact Protocol</h2>
+                        </div>
+                        <div class="legal-body">
+                            <p>
+                                Your user profile information (including full name, age, phone number, and emergency contact phone number) is stored securely 
+                                in the local MySQL database. In accordance with safety best practices:
+                            </p>
+                            <ul>
+                                <li><strong>Emergency Contact Usage:</strong> Your designated emergency contact number is retained exclusively for trip assistance, roadside SOS generation, and vehicle telemetry audit records.</li>
+                                <li><strong>Zero Telemetry Selling:</strong> TravelDB does not transmit, sell, or disclose your simulated GPS telemetry, route histories, or personal data to third-party advertisers.</li>
+                                <li><strong>Local Data Sovereignty:</strong> All geospatial indices, R-tree queries, and relational tables execute directly on your private server instance.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Open Source Attributions -->
+                    <article class="legal-card">
+                        <div class="card-header">
+                            <h2><i class="fa-solid fa-code-branch text-olive"></i> Open Data & Open Source Attributions</h2>
+                        </div>
+                        <div class="legal-body">
+                            <p>TravelDB gratefully acknowledges the following open-source frameworks and public data sources:</p>
+                            <ul class="attr-list">
+                                <li><strong>OpenStreetMap (OSM):</strong> Cartographic road network data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>, licensed under ODbL.</li>
+                                <li><strong>Open-Meteo API:</strong> Weather forecasts and live surface drag observations under CC BY 4.0.</li>
+                                <li><strong>Leaflet.js:</strong> Modern mobile-friendly interactive mapping library (BSD-2-Clause).</li>
+                                <li><strong>python-igraph:</strong> Fast C-core network analysis and shortest path routing.</li>
+                                <li><strong>MySQL 8.0 Community Server:</strong> Spatial R-tree indexing and transactional persistence.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="footer-brand"><i class="fa-solid fa-gas-pump text-olive"></i> TravelDB South India</span>
+                <span class="footer-sep">&bull;</span>
+                <span>Department of CSE &bull; AI & Robotics IDP</span>
+                <span class="footer-sep">&bull;</span>
+                <span>NH 48 Corridor (Chennai &ndash; Vellore)</span>
+            </div>
+            <div class="footer-right">
+                <span class="status-indicator"><span class="dot-online"></span> MySQL 8.0 ACID Connected</span>
+                <span class="footer-sep">&bull;</span>
+                <span class="status-indicator"><span class="dot-online"></span> In-Memory C-Core Active</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =======================================================================
+         MODAL 1: USER PROFILE & EMERGENCY CONTACT (Google Maps Style)
+         ======================================================================= -->
+    <div class="modal-backdrop" id="modal-profile">
+        <div class="modal-box profile-modal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-circle-user text-olive"></i>
+                    <span>Traveler Profile & Emergency Details</span>
+                </div>
+                <button class="btn-close-modal" id="btn-close-profile"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-hero">
+                    <div class="profile-large-avatar" id="prof-hero-avatar">AS</div>
+                    <div class="profile-hero-info">
+                        <h3 id="prof-hero-name">Asmit Sharma</h3>
+                        <p id="prof-hero-user">@demo_driver &bull; Traveler ID: #1</p>
+                    </div>
+                </div>
+
+                <form id="form-edit-profile">
+                    <div class="form-row">
+                        <div class="form-group col-half">
+                            <label for="prof-fullname">Full Name</label>
+                            <input type="text" id="prof-fullname" class="form-control" value="Asmit Sharma" required>
+                        </div>
+                        <div class="form-group col-half">
+                            <label for="prof-username">Username (Fixed)</label>
+                            <input type="text" id="prof-username" class="form-control" value="demo_driver" readonly disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-half">
+                            <label for="prof-age">Age</label>
+                            <input type="number" id="prof-age" class="form-control" value="20" min="16" max="100" required>
+                        </div>
+                        <div class="form-group col-half">
+                            <label for="prof-gender">Gender / Sex</label>
+                            <select id="prof-gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prof-phone">Personal Mobile Number</label>
+                        <input type="tel" id="prof-phone" class="form-control" value="+91 98765 43210" required>
+                    </div>
+
+                    <div class="form-group highlight-emergency">
+                        <label for="prof-emergency">
+                            <i class="fa-solid fa-phone-volume text-rust"></i> Emergency Contact Number
+                            <span class="info-icon has-tooltip" data-desc="Designated contact person alerted in case of severe roadside breakdown or collision."><i class="fa-solid fa-circle-info"></i></span>
+                        </label>
+                        <input type="tel" id="prof-emergency" class="form-control font-bold" value="+91 98111 22334" required>
+                    </div>
+
+                    <div class="modal-footer-btns">
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Profile Changes</button>
+                        <button type="button" class="btn btn-secondary" id="btn-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================================
+         MODAL 2: SIGN IN & FIRST-TIME REGISTRATION MODAL
+         ======================================================================= -->
+    <div class="modal-backdrop" id="modal-auth">
+        <div class="modal-box auth-modal">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-shield-cat text-olive"></i>
+                    <span id="auth-modal-title">Sign In to TravelDB</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="auth-tabs">
+                    <button class="auth-tab-btn active" id="tab-btn-login">Sign In</button>
+                    <button class="auth-tab-btn" id="tab-btn-register">Create Account (First Time)</button>
+                </div>
+
+                <!-- Sign In Form -->
+                <form id="form-login" class="auth-form active">
+                    <p class="auth-desc">Welcome to TravelDB South India. Sign in to access your fuel-aware routing engine.</p>
+                    <div class="form-group">
+                        <label for="login-username">Username or Email</label>
+                        <input type="text" id="login-username" class="form-control" placeholder="demo_driver" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div class="auth-actions">
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-right-to-bracket"></i> Sign In</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="btn-quick-demo-login">
+                            <i class="fa-solid fa-bolt"></i> Fill Demo Credentials (Asmit / demo_driver)
+                        </button>
+                    </div>
+                </form>
+
+                <!-- First Time Register Form -->
+                <form id="form-register" class="auth-form">
+                    <p class="auth-desc">Create your traveler profile. Emergency details are required to guarantee safety along the corridor.</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-half">
+                            <label for="reg-username">Username</label>
+                            <input type="text" id="reg-username" class="form-control" placeholder="e.g. asmit_driver" required>
+                        </div>
+                        <div class="form-group col-half">
+                            <label for="reg-password">Password</label>
+                            <input type="password" id="reg-password" class="form-control" placeholder="Min 6 chars" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-fullname">Full Name</label>
+                        <input type="text" id="reg-fullname" class="form-control" placeholder="e.g. Asmit Sharma" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-half">
+                            <label for="reg-age">Age</label>
+                            <input type="number" id="reg-age" class="form-control" value="20" min="16" max="100" required>
+                        </div>
+                        <div class="form-group col-half">
+                            <label for="reg-gender">Gender / Sex</label>
+                            <select id="reg-gender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-phone">Personal Phone Number</label>
+                        <input type="tel" id="reg-phone" class="form-control" placeholder="+91 98765 43210" required>
+                    </div>
+
+                    <div class="form-group highlight-emergency">
+                        <label for="reg-emergency">
+                            <i class="fa-solid fa-phone-volume text-rust"></i> Emergency Contact Phone Number
+                        </label>
+                        <input type="tel" id="reg-emergency" class="form-control font-bold" placeholder="+91 98111 22334" required>
+                        <small class="slider-hint">Used for roadside assistance and trip safety records.</small>
+                    </div>
+
+                    <div class="auth-actions">
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-user-plus"></i> Complete Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================================
+         MODAL 3: SAVE TRIP WITH NOTES MODAL
+         ======================================================================= -->
+    <div class="modal-backdrop" id="modal-save-trip">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-bookmark text-olive"></i>
+                    <span>Save This Trip to Your Profile</span>
+                </div>
+                <button class="btn-close-modal" id="btn-close-save-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-save-trip">
+                    <div class="form-group">
+                        <label for="save-trip-title">Trip Title / Label</label>
+                        <input type="text" id="save-trip-title" class="form-control" value="NH 48 Weekend Corridor Run" required>
+                    </div>
+
+                    <div class="save-trip-summary-box">
+                        <div class="summary-line"><span>Origin &rarr; Destination:</span> <strong id="save-summary-endpoints">-- &rarr; --</strong></div>
+                        <div class="summary-line"><span>Vehicle:</span> <strong id="save-summary-vehicle">--</strong></div>
+                        <div class="summary-line"><span>Distance & Fuel:</span> <strong id="save-summary-distance-fuel">-- km &bull; -- L</strong></div>
+                        <div class="summary-line"><span>Refuel Stops & Cost:</span> <strong id="save-summary-stops-cost">-- Stops &bull; ₹ --</strong></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="save-trip-notes">
+                            <i class="fa-solid fa-note-sticky text-olive"></i> Custom Travel Notes & Checklists
+                            <span class="info-icon has-tooltip" data-desc="Add personal reminders such as tire pressure checks, highway tolls, or passengers."><i class="fa-solid fa-circle-info"></i></span>
+                        </label>
+                        <textarea id="save-trip-notes" class="form-control text-area" rows="4" placeholder="e.g. Stop for coffee near Sriperumbudur. Check Fastag balance before departure."></textarea>
+                    </div>
+
+                    <div class="modal-footer-btns">
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Trip Plan</button>
+                        <button type="button" class="btn btn-secondary" id="btn-cancel-save-trip">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================================
+         MODAL 4: EDIT TRIP NOTES MODAL
+         ======================================================================= -->
+    <div class="modal-backdrop" id="modal-edit-notes">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-pen-to-square text-olive"></i>
+                    <span>Edit Trip Notes</span>
+                </div>
+                <button class="btn-close-modal" id="btn-close-edit-notes"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-edit-notes">
+                    <input type="hidden" id="edit-saved-trip-id">
+                    <div class="form-group">
+                        <label for="edit-trip-title">Trip Title</label>
+                        <input type="text" id="edit-trip-title" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-trip-notes">Trip Travel Notes</label>
+                        <textarea id="edit-trip-notes" class="form-control text-area" rows="5" required></textarea>
+                    </div>
+                    <div class="modal-footer-btns">
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Update Notes</button>
+                        <button type="button" class="btn btn-secondary" id="btn-cancel-edit-notes">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =======================================================================
+         MODAL 5: CROWDSOURCED HAZARD REPORT MODAL
+         ======================================================================= -->
+    <div class="modal-backdrop" id="modal-report">
+        <div class="modal-box">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i class="fa-solid fa-triangle-exclamation text-rust"></i>
+                    <span>Crowdsourced Hazard Report</span>
+                </div>
+                <button class="btn-close-modal" id="btn-close-report"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <p class="auth-desc">Report live road conditions along NH 48. Verified hazards update edge risk scores in MySQL.</p>
+                <form id="form-hazard-report">
+                    <div class="form-group">
+                        <label for="rep-type">Hazard Category</label>
+                        <select id="rep-type" class="form-control">
+                            <option value="accident">Accident / Collision</option>
+                            <option value="waterlogging">Severe Waterlogging</option>
+                            <option value="pothole">Deep Pothole / Road Damage</option>
+                            <option value="breakdown">Vehicle Breakdown</option>
+                            <option value="closure">Road Diversion / Lane Closure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="rep-severity">Severity Rating</label>
+                        <select id="rep-severity" class="form-control">
+                            <option value="low">Low (Minor Delay)</option>
+                            <option value="medium" selected>Medium (Caution Advised)</option>
+                            <option value="high">High (Dangerous / Impassable)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="rep-desc">Description & Landmark</label>
+                        <input type="text" id="rep-desc" class="form-control" placeholder="e.g. Waterlogging near Sunguvarchatram toll plaza" required>
+                    </div>
+                    <div class="modal-footer-btns">
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Submit Report</button>
+                        <button type="button" class="btn btn-secondary" id="btn-cancel-report">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Interactive Info Tooltip Popover -->
+    <div class="tooltip-popover" id="tooltip-popover">
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-text" id="tooltip-text">Tooltip information</div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- App Logic -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

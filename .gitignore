@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments - MUST NEVER BE UPLOADED TO GIT
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Pytest & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Database Local Credentials & Dumps (Credentials stay local)
+.env
+*.local.env
+*.dump
+*.sql.bak
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Large raw caches or temporary downloads
+cache/
+data/cache/
+data/osm/raw/
+*.log
+scratch/
