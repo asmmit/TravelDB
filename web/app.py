@@ -345,10 +345,11 @@ def plan_fuel_route():
         dest = data.get("destination")
         user_id = int(data.get("user_id", 1))
         vehicle_id = int(data.get("vehicle_id", 1))
-        initial_fuel = float(data.get("initial_fuel_l", 15.0))
-        reserve = float(data.get("reserve_l", 3.0))
+        initial_fuel = float(data.get("initial_fuel_l", data.get("initial_fuel", 15.0)))
+        reserve = float(data.get("reserve_l", data.get("reserve_fuel", 3.0)))
         margin = float(data.get("safety_margin", 0.85))
-        obj = data.get("objective", "fuel_safe")
+        obj = data.get("objective", "fastest")
+        avoid_blackspots = bool(data.get("avoid_blackspots", True))
 
         if not orig or not dest or len(orig) != 2 or len(dest) != 2:
             return jsonify({"status": "error", "message": "Valid 'origin' and 'destination' [lat, lon] required."}), 400
@@ -362,6 +363,7 @@ def plan_fuel_route():
             reserve_l=reserve,
             safety_margin=margin,
             mode=obj,
+            avoid_blackspots=avoid_blackspots,
             persist_to_db=True
         )
 

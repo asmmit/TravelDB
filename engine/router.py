@@ -70,22 +70,24 @@ def find_route(origin, destination, mode="fastest", avoid_blackspots=False):
             "edge_ids": []
         }
 
-    # 3. Select Edge Weight Attribute
+    # 3. Select Edge Weight Attribute & Multi-Objective Cost Function
     if mode == "shortest":
-        weight_attr = "length_m"
+        weights = list(g.es["length_m"])
     elif mode == "safest":
-        weight_attr = "safety_weight"
-    else:  # default 'fastest'
-        weight_attr = "travel_time_s"
-
-    if avoid_blackspots:
-        base_weights = g.es[weight_attr]
+        # Safest mode minimizes danger exposure with quadratic risk weighting and blackspot avoidance
         weights = [
-            w * 10.0 if r >= 45.0 else w
-            for w, r in zip(base_weights, g.es["risk_score"])
+            (l / 1000.0) * ((r / 15.0) ** 2.0) * (15.0 if r >= 30.0 else 1.0)
+            for l, r in zip(g.es["length_m"], g.es["risk_score"])
         ]
-    else:
-        weights = weight_attr
+    else:  # default 'fastest'
+        weights = list(g.es["travel_time_s"])
+
+    if avoid_blackspots and mode != "safest":
+        # Apply 15x penalty on high-risk edges and blackspot proximity zones (risk >= 30.0)
+        weights = [
+            w * 15.0 if r >= 30.0 else w
+            for w, r in zip(weights, g.es["risk_score"])
+        ]
 
     # 4. Execute Dijkstra Shortest Path in C (igraph)
     t_dijkstra_0 = time.time()

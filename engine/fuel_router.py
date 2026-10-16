@@ -70,6 +70,7 @@ def plan_fuel_trip(
     reserve_l=3.0,
     safety_margin=0.85,
     mode="fuel_safe",
+    avoid_blackspots=False,
     persist_to_db=True,
     trip_id=None
 ):
@@ -84,7 +85,8 @@ def plan_fuel_trip(
     - initial_fuel_l: Liters of fuel currently in tank
     - reserve_l: Reserve threshold (liters); tank must not drop below this
     - safety_margin: Safety multiplier (0.85 = 15% buffer against headwind/traffic)
-    - mode: 'fuel_safe' | 'fastest' | 'safest'
+    - mode: 'fastest' | 'shortest' | 'safest'
+    - avoid_blackspots: whether to divert around high-risk collision zones
     - persist_to_db: If True, writes records to TRIP, ROUTE_PLAN, ROUTE_PLAN_STOP, ROUTE_PLAN_EDGE
     """
     t_start = time.time()
@@ -116,8 +118,11 @@ def plan_fuel_trip(
         fuel_price_per_l = get_active_fuel_price(conn, "TN", fuel_type)
 
         # 2. Compute Primary Route
-        routing_mode = "safest" if mode == "safest" else "fastest"
-        base_route = find_route(origin, destination, mode=routing_mode)
+        if mode in ("shortest", "safest", "fastest"):
+            routing_mode = mode
+        else:
+            routing_mode = "fastest"
+        base_route = find_route(origin, destination, mode=routing_mode, avoid_blackspots=avoid_blackspots)
 
         if base_route["status"] != "success":
             return base_route

@@ -651,7 +651,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             origin: [oLat, oLon],
             destination: [dLat, dLon],
             vehicle_id: vehicleId,
+            initial_fuel_l: initialFuel,
             initial_fuel: initialFuel,
+            reserve_l: reserveFuel,
             reserve_fuel: reserveFuel,
             objective: activeObjective,
             avoid_blackspots: avoidBlackspots
@@ -1183,14 +1185,22 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (valPill) valPill.textContent = `${parseFloat(e.target.value).toFixed(1)} L`;
         });
 
-        // Objective buttons
+        // Objective buttons (Auto recalculates on click!)
         document.querySelectorAll(".btn-obj").forEach(btn => {
             btn.addEventListener("click", () => {
                 document.querySelectorAll(".btn-obj").forEach(b => b.classList.remove("active"));
                 btn.classList.add("active");
                 activeObjective = btn.getAttribute("data-obj") || "fastest";
+                computeFuelRoute();
             });
         });
+
+        // Avoid Blackspots checkbox change
+        document.getElementById("check-avoid-blackspots")?.addEventListener("change", computeFuelRoute);
+
+        // Origin & Destination dropdown changes
+        document.getElementById("select-origin")?.addEventListener("change", computeFuelRoute);
+        document.getElementById("select-destination")?.addEventListener("change", computeFuelRoute);
 
         // Calculate Route Button
         document.getElementById("btn-calculate")?.addEventListener("click", computeFuelRoute);
