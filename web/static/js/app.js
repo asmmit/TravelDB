@@ -671,10 +671,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
             const data = await res.json();
 
-            if (data.status === "success") {
-                currentTripId = data.trip_id;
-                currentRouteResult = data;
-                renderRoute(data);
+            if (data.status === "success" && data.plan) {
+                const plan = data.plan;
+                currentTripId = plan.trip_id;
+                currentRouteResult = plan;
+                renderRoute(plan);
                 showToast("Route and refuel schedule computed successfully!");
             } else {
                 showToast(data.message || "Route calculation error", "error");
@@ -691,6 +692,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function renderRoute(data) {
+        // Robust extraction whether data is full response or plan object
+        const plan = data.plan || data;
+        const coords = plan.polyline; // Array of [lat, lon]
+        if (!coords || !Array.isArray(coords) || coords.length === 0) {
+            console.error("Invalid coordinates in plan:", plan);
+            return;
+        }
+
         // Clear previous polylines & markers
         if (currentPolyline) map.removeLayer(currentPolyline);
         if (reroutePolyline) map.removeLayer(reroutePolyline);
@@ -700,7 +709,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         stopMarkers = [];
 
         // Polyline
-        const coords = data.polyline; // Array of [lat, lon]
         currentPolyline = L.polyline(coords, {
             color: "#556B2F",
             weight: 5,
@@ -730,7 +738,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Refuel Stops
         const callout = document.getElementById("refuel-callout-box");
-        const stops = data.refuel_stops || [];
+        const stops = plan.refuel_stops || [];
         if (stops.length > 0) {
             stops.forEach((s, idx) => {
                 const marker = L.marker([s.lat, s.lon], {
@@ -745,7 +753,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <div style="font-size:11px; color:#5E6353;">At Corridor KM ${s.at_distance_km}</div>
                         <div style="font-size:11px; margin-top:4px;">Arrive with: <strong>${s.arrival_fuel_l} L</strong></div>
                         <div style="font-size:11px;">Add: <strong style="color:#556B2F;">${s.refuel_liters_added} L</strong> (Full Tank)</div>
-                        <div style="font-size:12px; font-weight:700; color:#B7410E; margin-top:2px;">Est. Cost: ₹ ${s.estimated_cost_inr.toLocaleString()}</div>
+                        <div style="font-size:12px; font-weight:700; color:#B7410E; margin-top:2px;">Est. Cost: ₹ ${Math.round(s.estimated_cost_inr).toLocaleString()}</div>
                     </div>
                 `).addTo(map);
                 stopMarkers.push(marker);
@@ -756,7 +764,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const nameEl = document.getElementById("callout-station-name");
             const detEl = document.getElementById("callout-details");
             if (nameEl) nameEl.textContent = `${s0.station_name} • KM ${s0.at_distance_km}`;
-            if (detEl) detEl.innerHTML = `Arrive with ${s0.arrival_fuel_l} L &bull; Add <strong>${s0.refuel_liters_added} L</strong> to full tank &bull; Est. Cost: <strong>₹ ${s0.estimated_cost_inr.toLocaleString()}</strong>`;
+            if (detEl) detEl.innerHTML = `Arrive with ${s0.arrival_fuel_l} L &bull; Add <strong>${s0.refuel_liters_added} L</strong> to full tank &bull; Est. Cost: <strong>₹ ${Math.round(s0.estimated_cost_inr).toLocaleString()}</strong>`;
             if (callout) callout.style.display = "flex";
         } else {
             if (callout) callout.style.display = "none";
@@ -767,21 +775,27 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (rCard) rCard.style.display = "flex";
 
         const setT = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-        setT("res-distance", `${data.total_km} km`);
-        setT("res-duration", `${data.duration_min} mins`);
-        setT("res-fuel", `${data.fuel_needed_l} L`);
-        setT("res-stops", `${data.refuel_stops_count} ${data.refuel_stops_count === 1 ? 'Stop' : 'Stops'}`);
-        setT("res-cost", `₹ ${Math.round(data.total_cost_inr).toLocaleString()}`);
+        const distance = plan.distance_km ?? plan.total_distance_km ?? plan.total_km ?? 0;
+        const duration = plan.eta_minutes ?? plan.total_duration_min ?? plan.duration_min ?? 0;
+        const fuel = plan.total_fuel_needed_l ?? plan.total_fuel_needed_litres ?? plan.fuel_needed_l ?? 0;
+        const stopsCount = plan.refuel_stops_count ?? (plan.refuel_stops ? plan.refuel_stops.length : 0);
+        const cost = plan.total_refuel_cost_inr ?? plan.total_cost_inr ?? 0;
+
+        setT("res-distance", `${Number(distance).toFixed(1)} km`);
+        setT("res-duration", `${Math.round(duration)} mins`);
+        setT("res-fuel", `${Number(fuel).toFixed(2)} L`);
+        setT("res-stops", `${stopsCount} ${stopsCount === 1 ? 'Stop' : 'Stops'}`);
+        setT("res-cost", `₹ ${Math.round(cost).toLocaleString()}`);
 
         const tagFeas = document.getElementById("tag-feasibility");
         if (tagFeas) {
-            tagFeas.textContent = data.feasible ? "FEASIBLE" : "INFEASIBLE";
-            tagFeas.style.background = data.feasible ? "#DCFCE7" : "#FEE2E2";
-            tagFeas.style.color = data.feasible ? "#166534" : "#991B1B";
+            tagFeas.textContent = plan.feasible ? "FEASIBLE" : "INFEASIBLE";
+            tagFeas.style.background = plan.feasible ? "#DCFCE7" : "#FEE2E2";
+            tagFeas.style.color = plan.feasible ? "#166534" : "#991B1B";
         }
 
         // Turn-by-turn guidance
-        const turns = data.turn_instructions || [];
+        const turns = plan.turn_instructions || plan.instructions || [];
         setT("turns-count", `${turns.length} turns`);
         const tContainer = document.getElementById("turns-container");
         if (tContainer) {
@@ -947,11 +961,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             const destName = destSel?.options[destSel.selectedIndex]?.text || "Destination";
             const vehName = vehSel?.options[vehSel.selectedIndex]?.text || "Vehicle";
 
+            const dist = currentRouteResult.distance_km ?? currentRouteResult.total_distance_km ?? currentRouteResult.total_km ?? 0;
+            const fuel = currentRouteResult.total_fuel_needed_l ?? currentRouteResult.total_fuel_needed_litres ?? currentRouteResult.fuel_needed_l ?? 0;
+            const cost = currentRouteResult.total_refuel_cost_inr ?? currentRouteResult.total_cost_inr ?? 0;
+            const stops = currentRouteResult.refuel_stops_count ?? (currentRouteResult.refuel_stops ? currentRouteResult.refuel_stops.length : 0);
+
             const setT = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
             setT("save-summary-endpoints", `${origName} → ${destName}`);
             setT("save-summary-vehicle", vehName);
-            setT("save-summary-distance-fuel", `${currentRouteResult.total_km} km • ${currentRouteResult.fuel_needed_l} L`);
-            setT("save-summary-stops-cost", `${currentRouteResult.refuel_stops_count} Stops • ₹ ${Math.round(currentRouteResult.total_cost_inr).toLocaleString()}`);
+            setT("save-summary-distance-fuel", `${Number(dist).toFixed(1)} km • ${Number(fuel).toFixed(2)} L`);
+            setT("save-summary-stops-cost", `${stops} Stops • ₹ ${Math.round(cost).toLocaleString()}`);
 
             document.getElementById("modal-save-trip")?.classList.add("open");
         });
@@ -973,6 +992,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             const destSel = document.getElementById("select-destination");
             const vehSel = document.getElementById("select-vehicle");
 
+            const dist = currentRouteResult.distance_km ?? currentRouteResult.total_distance_km ?? currentRouteResult.total_km ?? 0;
+            const fuel = currentRouteResult.total_fuel_needed_l ?? currentRouteResult.total_fuel_needed_litres ?? currentRouteResult.fuel_needed_l ?? 0;
+            const cost = currentRouteResult.total_refuel_cost_inr ?? currentRouteResult.total_cost_inr ?? 0;
+            const stops = currentRouteResult.refuel_stops_count ?? (currentRouteResult.refuel_stops ? currentRouteResult.refuel_stops.length : 0);
+
             const payload = {
                 user_id: currentUser ? currentUser.user_id : 1,
                 trip_id: currentTripId,
@@ -980,10 +1004,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 origin_name: origSel?.options[origSel.selectedIndex]?.text || "Origin",
                 destination_name: destSel?.options[destSel.selectedIndex]?.text || "Destination",
                 vehicle_name: vehSel?.options[vehSel.selectedIndex]?.text || "Standard Vehicle",
-                distance_km: currentRouteResult.total_km,
-                fuel_liters: currentRouteResult.fuel_needed_l,
-                refuel_stops: currentRouteResult.refuel_stops_count,
-                estimated_cost_inr: currentRouteResult.total_cost_inr,
+                distance_km: parseFloat(dist),
+                fuel_liters: parseFloat(fuel),
+                refuel_stops: parseInt(stops),
+                estimated_cost_inr: parseFloat(cost),
                 trip_notes: document.getElementById("save-trip-notes")?.value.trim() || ""
             };
 
@@ -1054,8 +1078,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             showToast("Simulating low fuel alarm (2.0 L remaining)... Re-optimizing remaining path...", "warning");
 
             const payload = {
-                current_location: [12.9348, 79.8450], // Sunguvarchatram on NH 48
-                current_fuel: 2.0,
+                current_coords: [12.9348, 79.8450], // Sunguvarchatram on NH 48
+                current_fuel_l: 2.0,
                 trigger_reason: "low_fuel"
             };
 
@@ -1066,22 +1090,25 @@ document.addEventListener("DOMContentLoaded", async () => {
                     body: JSON.stringify(payload)
                 });
                 const data = await res.json();
-                if (data.status === "success") {
-                    // Draw emergency diversion polyline in amber
-                    if (reroutePolyline) map.removeLayer(reroutePolyline);
-                    reroutePolyline = L.polyline(data.new_plan.polyline, {
-                        color: "#B7410E",
-                        weight: 6,
-                        dashArray: "8, 8",
-                        opacity: 0.95
-                    }).addTo(map);
+                if (data.status === "success" && data.reroute) {
+                    const newPlan = data.reroute.new_plan || data.reroute.reroute_plan;
+                    if (newPlan && newPlan.polyline) {
+                        if (reroutePolyline) map.removeLayer(reroutePolyline);
+                        reroutePolyline = L.polyline(newPlan.polyline, {
+                            color: "#B7410E",
+                            weight: 6,
+                            dashArray: "8, 8",
+                            opacity: 0.95
+                        }).addTo(map);
 
-                    map.fitBounds(reroutePolyline.getBounds(), { padding: [50, 50] });
-                    showToast("Emergency reroute computed! Diverted to nearest pump. Logged to REROUTE_EVENT.");
+                        map.fitBounds(reroutePolyline.getBounds(), { padding: [50, 50] });
+                        showToast("Emergency reroute computed! Diverted to nearest pump. Logged to REROUTE_EVENT.");
+                    }
                 } else {
                     showToast(data.message || "Reroute failed", "error");
                 }
             } catch (err) {
+                console.error("Simulation error:", err);
                 showToast("Error executing simulation reroute", "error");
             }
         });
